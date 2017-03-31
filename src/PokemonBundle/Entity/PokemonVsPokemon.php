@@ -15,7 +15,7 @@ class PokemonVsPokemon
     /**
      * @var integer
      *
-     * @ORM\Column(name="attacker_pokemon_id", type="integer", nullable=false)
+     * @ORM\Column(name="attacker_pokemon_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
      */
@@ -24,7 +24,7 @@ class PokemonVsPokemon
     /**
      * @var integer
      *
-     * @ORM\Column(name="defender_pokemon_id", type="integer", nullable=false)
+     * @ORM\Column(name="defender_pokemon_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
      */
@@ -33,7 +33,7 @@ class PokemonVsPokemon
     /**
      * @var float
      *
-     * @ORM\Column(name="ratio", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(name="ratio", type="float", precision=10, scale=0, nullable=false, unique=false)
      */
     private $ratio;
 

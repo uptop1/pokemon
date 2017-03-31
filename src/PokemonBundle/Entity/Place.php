@@ -15,7 +15,7 @@ class Place
     /**
      * @var integer
      *
-     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,20 +24,20 @@ class Place
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=20, nullable=false)
+     * @ORM\Column(name="name", type="string", length=20, precision=0, scale=0, nullable=false, unique=false)
      */
     private $name;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Type", inversedBy="place")
+     * @ORM\ManyToMany(targetEntity="PokemonBundle\Entity\Type", inversedBy="place")
      * @ORM\JoinTable(name="place_pokemon_type",
      *   joinColumns={
-     *     @ORM\JoinColumn(name="place_id", referencedColumnName="id")
+     *     @ORM\JoinColumn(name="place_id", referencedColumnName="id", nullable=true)
      *   },
      *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="type_id", referencedColumnName="id")
+     *     @ORM\JoinColumn(name="type_id", referencedColumnName="id", nullable=true)
      *   }
      * )
      */

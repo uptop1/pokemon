@@ -15,7 +15,7 @@ class Type
     /**
      * @var integer
      *
-     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,20 +24,20 @@ class Type
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="string", length=50, nullable=false)
+     * @ORM\Column(name="title", type="string", length=50, precision=0, scale=0, nullable=false, unique=false)
      */
     private $title;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Type", inversedBy="attackType")
+     * @ORM\ManyToMany(targetEntity="PokemonBundle\Entity\Type", inversedBy="attackType")
      * @ORM\JoinTable(name="battle_chart",
      *   joinColumns={
-     *     @ORM\JoinColumn(name="attack_type", referencedColumnName="id")
+     *     @ORM\JoinColumn(name="attack_type", referencedColumnName="id", nullable=true)
      *   },
      *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="defense_type", referencedColumnName="id")
+     *     @ORM\JoinColumn(name="defense_type", referencedColumnName="id", nullable=true)
      *   }
      * )
      */
@@ -46,14 +46,14 @@ class Type
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Place", mappedBy="type")
+     * @ORM\ManyToMany(targetEntity="PokemonBundle\Entity\Place", mappedBy="type")
      */
     private $place;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Pokemon", mappedBy="type")
+     * @ORM\ManyToMany(targetEntity="PokemonBundle\Entity\Pokemon", mappedBy="type")
      */
     private $pokemon;
 

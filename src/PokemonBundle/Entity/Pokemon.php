@@ -15,7 +15,7 @@ class Pokemon
     /**
      * @var integer
      *
-     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,83 +24,83 @@ class Pokemon
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=20, nullable=false)
+     * @ORM\Column(name="name", type="string", length=20, precision=0, scale=0, nullable=false, unique=false)
      */
     private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="types", type="string", length=100, nullable=false)
+     * @ORM\Column(name="types", type="string", length=100, precision=0, scale=0, nullable=false, unique=false)
      */
     private $types;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="stamina", type="integer", nullable=false)
+     * @ORM\Column(name="stamina", type="integer", precision=0, scale=0, nullable=false, unique=false)
      */
     private $stamina;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="attack", type="integer", nullable=false)
+     * @ORM\Column(name="attack", type="integer", precision=0, scale=0, nullable=false, unique=false)
      */
     private $attack;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="defense", type="integer", nullable=false)
+     * @ORM\Column(name="defense", type="integer", precision=0, scale=0, nullable=false, unique=false)
      */
     private $defense;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="capture_rate", type="integer", nullable=false)
+     * @ORM\Column(name="capture_rate", type="integer", precision=0, scale=0, nullable=false, unique=false)
      */
     private $captureRate;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="flee_rate", type="integer", nullable=false)
+     * @ORM\Column(name="flee_rate", type="integer", precision=0, scale=0, nullable=false, unique=false)
      */
     private $fleeRate;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="candy", type="integer", nullable=true)
+     * @ORM\Column(name="candy", type="integer", precision=0, scale=0, nullable=true, unique=false)
      */
     private $candy;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="quick_moves", type="string", length=150, nullable=true)
+     * @ORM\Column(name="quick_moves", type="string", length=150, precision=0, scale=0, nullable=true, unique=false)
      */
     private $quickMoves;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="special_moves", type="string", length=150, nullable=true)
+     * @ORM\Column(name="special_moves", type="string", length=150, precision=0, scale=0, nullable=true, unique=false)
      */
     private $specialMoves;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Type", inversedBy="pokemon")
+     * @ORM\ManyToMany(targetEntity="PokemonBundle\Entity\Type", inversedBy="pokemon")
      * @ORM\JoinTable(name="pokemon_type",
      *   joinColumns={
-     *     @ORM\JoinColumn(name="pokemon_id", referencedColumnName="id")
+     *     @ORM\JoinColumn(name="pokemon_id", referencedColumnName="id", nullable=true)
      *   },
      *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="type_id", referencedColumnName="id")
+     *     @ORM\JoinColumn(name="type_id", referencedColumnName="id", nullable=true)
      *   }
      * )
      */

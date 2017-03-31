@@ -15,7 +15,7 @@ class Player
     /**
      * @var integer
      *
-     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,30 +24,30 @@ class Player
     /**
      * @var string
      *
-     * @ORM\Column(name="username", type="string", length=50, nullable=false)
+     * @ORM\Column(name="username", type="string", length=50, precision=0, scale=0, nullable=false, unique=false)
      */
     private $username;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="level", type="smallint", nullable=false)
+     * @ORM\Column(name="level", type="smallint", precision=0, scale=0, nullable=false, unique=false)
      */
-    private $level = '1';
+    private $level;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="xp", type="integer", nullable=false)
+     * @ORM\Column(name="xp", type="integer", precision=0, scale=0, nullable=false, unique=false)
      */
-    private $xp = '0';
+    private $xp;
 
     /**
-     * @var \Pokemon
+     * @var \PokemonBundle\Entity\Pokemon
      *
-     * @ORM\ManyToOne(targetEntity="Pokemon")
+     * @ORM\ManyToOne(targetEntity="PokemonBundle\Entity\Pokemon")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="pokemon_id", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="pokemon_id", referencedColumnName="id", nullable=true)
      * })
      */
     private $pokemon;

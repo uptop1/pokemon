@@ -35,7 +35,7 @@ Getting Started
 ---------------
 
 ### Installation
-1. Clone the repository `git clone https://github.com/mostafa/pokemon.git`
+1. Clone the repository `git clone https://github.com/uptop1/pokemon.git`
 2. Change directory `cd pokemon`
 3. Install the libraries using composer `composer install`
 4. Create a database

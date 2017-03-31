@@ -54,6 +54,7 @@ class PokemonGame
 
             $this->player = new Player;
             $this->player->setUsername($username);
+            $this->player->setLevel(1);
 
             $em = $this->doctrine->getManager();
             $em->persist($this->player);
