@@ -1,0 +1,25 @@
+PokemonVsPokemon:
+    type: entity
+    table: pokemon_vs_pokemon
+    id:
+        attackerPokemonId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: attacker_pokemon_id
+        defenderPokemonId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: defender_pokemon_id
+    fields:
+        ratio:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+    lifecycleCallbacks: {  }

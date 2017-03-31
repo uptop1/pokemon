@@ -1,0 +1,51 @@
+PokemonBundle\Entity\Player:
+    type: entity
+    table: player
+    indexes:
+        pokemon_id:
+            columns:
+                - pokemon_id
+    uniqueConstraints:
+        username:
+            columns:
+                - username
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        username:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+        level:
+            type: smallint
+            nullable: false
+            options:
+                unsigned: false
+                default: '1'
+        xp:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                default: '0'
+    manyToOne:
+        pokemon:
+            targetEntity: Pokemon
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                pokemon_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,38 @@
+Place:
+    type: entity
+    table: place
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+    manyToMany:
+        type:
+            targetEntity: Type
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: place
+            joinTable:
+                name: place_pokemon_type
+                joinColumns:
+                    -
+                        name: place_id
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    -
+                        name: type_id
+                        referencedColumnName: id
+            orderBy: null
+    lifecycleCallbacks: {  }

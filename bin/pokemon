@@ -1,0 +1,16 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__.'/../vendor/autoload.php';
+
+use Symfony\Bundle\FrameworkBundle\Console\Application;
+use PokemonBundle\Command\PlayCommand;
+
+$kernel = new AppKernel('dev', false);
+$application = new Application($kernel,'Pokemon', '1.0.0');
+
+$command = new PlayCommand();
+$application->add($command);
+
+$application->setDefaultCommand('play', true);
+$application->run();
