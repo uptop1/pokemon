@@ -29,7 +29,7 @@ Which files I built exactly
 2. PlayCommand at `src/PokemonBundle/Command/PlayCommand.php`
 3. Console application initiation at `bin/pokemon`
 4. Imported entities at `src/PokemonBundle/Entity/`
-5. Tests at `tests/PokemonBundle/Command/PlayCommandTest.php`
+5. Tests at `tests/Pokemon/PokemonGameTest.php`
 
 Getting Started
 ---------------
