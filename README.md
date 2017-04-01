@@ -5,6 +5,10 @@ A simple RPG simulates Pokemon training adventure. It's a text based one runs on
 
 Hope you are going to enjoy the game as much I enjoyed building it.
 
+Demo
+---------------
+![gif](http://i.imgur.com/SgnBl5z.gif)
+
 Features
 ---------------
 1. Start new game
