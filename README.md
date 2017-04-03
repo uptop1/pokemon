@@ -47,6 +47,8 @@ Getting Started
 6. Copy `/app/config/parameters.yml.dist` to `/app/config/parameters.yml`
 7. Set database connection parameters in `/app/config/parameters.yml`
 
+Note: You may not need to do steps 6 and 7 if you set these data while installing the game from composer.
+
 Usage
 -----
 
@@ -59,9 +61,11 @@ $ php bin/pokemon
 
 ### Resume saved game
 ```bash
-$ php bin/pokemon play [username]
+$ php bin/pokemon [username]
 ```
 
 Note
 ---------------
 I do not usually use symfony framework nor doctrine, but I thought it's a great chance to try them so I built this game and I fell in love with symfony :D. If you find any issue, please inform me, I really appretiate feedbacks.
+
+I know it's better to build the DB using migrations, but I had not time for this.
